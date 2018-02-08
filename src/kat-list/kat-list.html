@@ -1,0 +1,16 @@
+<template>
+  <div class="list-container">
+    <div class="kat-title">
+        Kitty Kats
+    </div>
+    <!-- <button click.delegate="toggleTest()">Test Actions</button>
+    <label>${katsOnline}</label> -->
+    <div class="names">
+      <div repeat.for="name of names" class="name-block">
+        <div class='name grow' click.delegate="goToKat(name.name)">
+            ${name.name}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

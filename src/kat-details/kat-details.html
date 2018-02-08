@@ -1,0 +1,20 @@
+<template>
+  <require from="./quote-component"></require>
+  <div class="cat-details">
+      <div class="kat-title">${kat.name}</div>
+    <div class="navigation">
+      <button class="btn btn-primary" click.delegate="prevKat()">Prev Kat</button>
+      <button class="btn btn-info" click.delegate="nextCat()">Next Kat</button>
+    </div>
+    <div if.bind="!loaded || imageSrc == ''">Loading</div>
+      <img class='cat-pic'src="${imageSrc}" alt="" load.trigger="imageLoaded()">
+
+      <quote-component
+        if.bind="loaded && imageSrc !== ''"
+        quote.bind="quote"
+        parentfunction.bind="testQuote"
+      ></quote-component>
+
+      <span class="glyphicon glyphicon-arrow-left" click.delegate="navigateBack()"></span>
+  </div>
+</template>
